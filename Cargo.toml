@@ -19,8 +19,19 @@ reth-blockchain-tree = { git = "https://github.com/paradigmxyz/reth", package = 
 reth-beacon-consensus = { git = "https://github.com/paradigmxyz/reth", package = "reth-beacon-consensus" }
 reth-revm = { git = "https://github.com/paradigmxyz/reth", package = "reth-revm"}
 reth-interfaces = { git = "https://github.com/paradigmxyz/reth", package = "reth-interfaces"}
-ethers = { version = "2.0", git = "https://github.com/gakonst/ethers-rs", default-features = false, features = ["ipc"] }
-ethers-providers = {version = "2.0", features = ["ipc"]}
+
+# ethers
+ethers = { version = "2.0.4", default-features = false, features = ["ipc"] }
+ethers-providers = {version = "2.0.4", features = ["ipc"]}
+ethers-addressbook = { version = "2.0.4", default-features = false }
+ethers-core = { version = "2.0.4", default-features = false }
+ethers-contract = { version = "2.0.4", default-features = false }
+ethers-contract-abigen = { version = "2.0.4", default-features = false }
+ethers-signers = { version = "2.0.4", default-features = false }
+ethers-middleware = { version = "2.0.4", default-features = false }
+ethers-etherscan = { version = "2.0.4", default-features = false }
+ethers-solc = { version = "2.0.4", default-features = false }
+
 
 eyre = "0.6.8"
 tokio = "1.28.0"
