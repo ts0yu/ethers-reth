@@ -12,13 +12,13 @@ use ethers::types::{
     VMTrace as EthersVMTrace,
 };
 use reth_revm::primitives::bitvec::macros::internal::funty::Fundamental;
-use reth_rpc_types::{trace::parity::{
+use reth_rpc_types::trace::parity::{
     AccountDiff, Action, CallAction, CallOutput, CallType, ChangedType, CreateAction, CreateOutput,
     Delta, LocalizedTransactionTrace, MemoryDelta, RewardAction, RewardType, SelfdestructAction,
     StateDiff, StorageDelta, TraceOutput, TraceResult, TraceResults,
     TraceResultsWithTransactionHash, TraceType, TransactionTrace, VmExecutedOperation,
     VmInstruction, VmTrace,
-}, error};
+};
 
 /// Action (ethers) -> (reth)
 impl ToReth<Action> for EthersAction {
@@ -325,7 +325,7 @@ impl ToEthers<EthersTransactionTrace> for TransactionTrace {
                 EthersAction::Reward(_) => EthersActionType::Reward,
             },
             error: match self.result {
-                Some(TraceResult::Error { error }) => Some(error.to_string()),
+                Some(TraceResult::Error { error }) => Some(error),
                 _ => None
             }
         }
